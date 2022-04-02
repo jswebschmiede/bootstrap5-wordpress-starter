@@ -1,10 +1,10 @@
 {
-  "name": "joomla-beierle-maler",
-  "version": "3.0.0",
+  "name": "bootstrap5-wordpress-starter",
+  "version": "1.0.0",
   "license": "GPL-2.0",
   "description": "A WordPress Starter Theme built with Bootstrap 5.",
-  "homepage": "https://them.es",
-  "author": "them.es",
+  "homepage": "",
+  "author": "",
   "repository": {
     "type": "git",
     "url": "git://github.com/them-es/themes-starter.git"
