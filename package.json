@@ -7,7 +7,7 @@
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/them-es/themes-starter.git"
+    "url": "https://github.com/jswebschmiede/bootstrap5-wordpress-starter.git"
   },
   "scripts": {
     "watch": "gulp watch"
