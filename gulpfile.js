@@ -1,8 +1,8 @@
-const gulp = require("gulp"),
-  fancylog = require("fancy-log"),
-  browserSync = require("browser-sync"),
-  server = browserSync.create(),
-  dev_url = "http://best-real-estate.local/";
+const gulp = require("gulp");
+const fancylog = require("fancy-log");
+const browserSync = require("browser-sync");
+const server = browserSync.create();
+const dev_url = "http://best-real-estate.local/";
 
 /**
  * Define all source paths
@@ -10,11 +10,11 @@ const gulp = require("gulp"),
 
 var paths = {
   styles: {
-    src: "./assets/scss/*.scss",
+    src: "./assets/src/scss/**/*.{scss,sass}",
     dest: "./assets/css",
   },
   scripts: {
-    src: "./assets/*.js",
+    src: "./assets/src/js/**/*.js",
     dest: "./assets/js",
   },
 };
@@ -26,8 +26,8 @@ var paths = {
  */
 
 function build_js() {
-  const compiler = require("webpack"),
-    webpackStream = require("webpack-stream");
+  const compiler = require("webpack");
+  const webpackStream = require("webpack-stream");
 
   return gulp
     .src(paths.scripts.src)
@@ -52,18 +52,18 @@ function build_js() {
  */
 
 function build_css() {
-  const sass = require("gulp-sass")(require("sass")),
-    postcss = require("gulp-postcss"),
-    sourcemaps = require("gulp-sourcemaps"),
-    autoprefixer = require("autoprefixer"),
-    cssnano = require("cssnano");
+  const sass = require("gulp-sass")(require("sass"));
+  const postcss = require("gulp-postcss");
+  const sourcemaps = require("gulp-sourcemaps");
+  const autoprefixer = require("autoprefixer");
+  const cssnano = require("cssnano");
 
   const plugins = [autoprefixer(), cssnano()];
 
   return gulp
-    .src(paths.styles.src)
+    .src("assets/src/scss/**/*.{scss,sass}")
     .pipe(sourcemaps.init())
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass({ includePaths: ["./node_modules"] }).on("error", sass.logError))
     .pipe(postcss(plugins))
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(paths.styles.dest))
@@ -85,8 +85,6 @@ gulp.task("watch", function () {
   });
 
   gulp.watch(["*.php", "./**/*.php"]).on("change", server.reload);
-
-  gulp.watch(paths.scripts.src, build_js);
-  gulp.watch([paths.styles.src, "./assets/scss/*.scss"], build_css);
+  gulp.watch([paths.scripts.src], build_js);
+  gulp.watch([paths.styles.src], build_css);
 });
-
