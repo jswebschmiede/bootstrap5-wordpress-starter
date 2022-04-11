@@ -116,6 +116,12 @@ $nav-link-hover-color: $primary;
 // 5. Optionally include utilities API last to generate classes based on the Sass map in `_utililies.scss`
 @import "bootstrap/scss/utilities/api";
 
+// Webfont
+@import "@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "@fortawesome/fontawesome-free/scss/solid.scss";
+@import "@fortawesome/fontawesome-free/scss/brands.scss";
+
+// Components
 @import "./components/header";
 @import "./components/footer";
 @import "./components/sidebar";
