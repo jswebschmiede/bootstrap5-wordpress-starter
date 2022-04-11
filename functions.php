@@ -13,12 +13,12 @@ include(get_theme_file_path('/includes/theme-customizer.php'));
 include(get_theme_file_path('/includes/bootstrap-5-wordpress-navbar-walker.php'));
 
 // Hooks
-add_action('wp_enqueue_scripts', 'realone_enqueue');
-add_action('after_setup_theme', 'realone_setup_theme');
-add_action('widgets_init', 'realone_widgets');
-add_action('customize_register', 'realone_customizer_register');
+add_action('wp_enqueue_scripts', 'your_tpl_enqueue');
+add_action('after_setup_theme', 'your_tpl_setup_theme');
+add_action('widgets_init', 'your_tpl_widgets');
+add_action('customize_register', 'your_tpl_customizer_register');
 
 // Filter
-// add_filter('nav_menu_link_attributes', 'realone_add_link_atts');
+// add_filter('nav_menu_link_attributes', 'your_tpl_add_link_atts');
 
 // Shortcodes
