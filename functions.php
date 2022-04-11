@@ -15,7 +15,7 @@ include(get_theme_file_path('/includes/front/actions.php'));
 include(get_theme_file_path('/includes/setup.php'));
 include(get_theme_file_path('/includes/widgets.php'));
 include(get_theme_file_path('/includes/theme-customizer.php'));
-include(get_theme_file_path('/includes/libs/class-wp-bootstrap-navwalker'));
+include(get_theme_file_path('/includes/libs/class-wp-bootstrap-navwalker.php'));
 
 // Hooks
 add_action('wp_enqueue_scripts', 'your_tpl_enqueue');
