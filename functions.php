@@ -4,6 +4,8 @@
 define('REAL_DEV_MODE', true);
 
 // Includes
+
+/* uncomment for admin menu etc. */
 // include(get_theme_file_path('/includes/admin/init.php'));
 
 include(get_theme_file_path('/includes/helpers.php'));
