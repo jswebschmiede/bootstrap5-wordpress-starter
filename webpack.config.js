@@ -5,7 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, "assets"),
   mode: "development",
   entry: {
-    main: ["./main.js"],
+    main: ["./src/js/main.js"],
   },
   output: {
     path: path.resolve(__dirname, "assets/js"),
