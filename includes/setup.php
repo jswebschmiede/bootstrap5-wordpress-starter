@@ -8,5 +8,5 @@ function your_tpl_setup_theme()
     add_theme_support('post-thumbnails');
     add_theme_support('custom-logo');
     add_theme_support('woocommerce');
-    register_nav_menu('main-menu', __('Primary Menu', 'realone'));
+    register_nav_menu('main-menu', __('Primary Menu', 'your_tpl'));
 }

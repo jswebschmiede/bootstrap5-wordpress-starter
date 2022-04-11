@@ -10,7 +10,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package realone
+ * @package your_tpl
  */
 
 get_header(); ?>

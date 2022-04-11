@@ -8,7 +8,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package realone
+ * @package your_tpl
  */
 
 /*
@@ -31,7 +31,7 @@ endif;
 			<?php
 			printf(
 				/* translators: 1: Comments count. */
-				esc_html(_n('%d Comment.', '%d Comments.', get_comments_number(), 'realone')),
+				esc_html(_n('%d Comment.', '%d Comments.', get_comments_number(), 'your_tpl')),
 				absint(get_comments_number())
 			);
 			?>
@@ -40,11 +40,11 @@ endif;
 		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // Are there comments to navigate through? 
 		?>
 			<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'realone'); ?></h2>
+				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'your_tpl'); ?></h2>
 				<div class="nav-links">
 
-					<div class="nav-previous"><?php previous_comments_link(esc_html__('Older Comments', 'realone')); ?></div>
-					<div class="nav-next"><?php next_comments_link(esc_html__('Newer Comments', 'realone')); ?></div>
+					<div class="nav-previous"><?php previous_comments_link(esc_html__('Older Comments', 'your_tpl')); ?></div>
+					<div class="nav-next"><?php next_comments_link(esc_html__('Newer Comments', 'your_tpl')); ?></div>
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-above -->
@@ -65,11 +65,11 @@ endif;
 		<?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : // Are there comments to navigate through? 
 		?>
 			<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'realone'); ?></h2>
+				<h2 class="screen-reader-text"><?php esc_html_e('Comment navigation', 'your_tpl'); ?></h2>
 				<div class="nav-links">
 
-					<div class="nav-previous"><?php previous_comments_link(esc_html__('Older Comments', 'realone')); ?></div>
-					<div class="nav-next"><?php next_comments_link(esc_html__('Newer Comments', 'realone')); ?></div>
+					<div class="nav-previous"><?php previous_comments_link(esc_html__('Older Comments', 'your_tpl')); ?></div>
+					<div class="nav-next"><?php next_comments_link(esc_html__('Newer Comments', 'your_tpl')); ?></div>
 
 				</div><!-- .nav-links -->
 			</nav><!-- #comment-nav-below -->
@@ -83,7 +83,7 @@ endif;
 	if (!comments_open() && get_comments_number() && post_type_supports(get_post_type(), 'comments')) :
 		?>
 
-		<p class="no-comments"><?php esc_html_e('Comments are closed.', 'realone'); ?></p>
+		<p class="no-comments"><?php esc_html_e('Comments are closed.', 'your_tpl'); ?></p>
 	<?php
 	endif;
 

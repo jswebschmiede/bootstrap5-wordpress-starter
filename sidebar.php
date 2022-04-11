@@ -5,11 +5,11 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package realone
+ * @package your_tpl
  */
 
 
-if (!is_active_sidebar('realone-sidebar')) :
+if (!is_active_sidebar('your_tpl-sidebar')) :
     return;
 endif;
 ?>
@@ -17,6 +17,6 @@ endif;
 
 <aside id="secondary" class="widget-area" role="complementary">
     <?php
-    dynamic_sidebar('realone-sidebar');
+    dynamic_sidebar('your_tpl-sidebar');
     ?>
 </aside><!-- #secondary -->

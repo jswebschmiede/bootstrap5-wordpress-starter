@@ -5,7 +5,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package realone
+ * @package your_tpl
  */
 
 ?>
@@ -21,7 +21,7 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__('Pages:', 'realone'),
+				'before' => '<div class="page-links">' . esc_html__('Pages:', 'your_tpl'),
 				'after'  => '</div>',
 			)
 		);

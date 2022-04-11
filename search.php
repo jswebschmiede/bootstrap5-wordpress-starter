@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package realone
+ * @package your_tpl
  */
 
 get_header(); ?>
@@ -28,7 +28,7 @@ get_header(); ?>
 								<?php
 								printf(
 									/* translators: %s: Search Term. */
-									esc_html__('Search Results for: %s', 'realone'),
+									esc_html__('Search Results for: %s', 'your_tpl'),
 									'<span>' . get_search_query() . '</span>'
 								);
 								?>

@@ -5,14 +5,14 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package realone
+ * @package your_tpl
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <?php
+	<header class="entry-header">
+		<?php
 		if (is_single()) :
 			the_title('<h1 class="entry-title">', '</h1>');
 		else :
@@ -21,21 +21,21 @@
 
 		if ('post' === get_post_type()) :
 		?>
-        <div class="entry-meta">
+			<div class="entry-meta">
 
-        </div><!-- .entry-meta -->
-        <?php
+			</div><!-- .entry-meta -->
+		<?php
 		endif;
 		?>
-    </header><!-- .entry-header -->
+	</header><!-- .entry-header -->
 
-    <div class="entry-content">
-        <?php
+	<div class="entry-content">
+		<?php
 		the_content(
 			sprintf(
 				wp_kses(
 					/* translators: %s: Name of current post. */
-					__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'realone'),
+					__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'your_tpl'),
 					array(
 						'span' => array(
 							'class' => array(),
@@ -48,14 +48,14 @@
 
 		wp_link_pages(
 			array(
-				'before' => '<div class="page-links">' . esc_html__('Pages:', 'realone'),
+				'before' => '<div class="page-links">' . esc_html__('Pages:', 'your_tpl'),
 				'after'  => '</div>',
 			)
 		);
 		?>
-    </div><!-- .entry-content -->
+	</div><!-- .entry-content -->
 
-    <footer class="entry-footer">
+	<footer class="entry-footer">
 
-    </footer><!-- .entry-footer -->
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package realone
+ * @package your_tpl
  */
 
 get_header(); ?>

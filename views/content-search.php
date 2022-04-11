@@ -1,54 +1,71 @@
 <?php
 
 /**
- * Template part for displaying results in search pages
+ * The template for displaying search results pages
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
  * @package realone
  */
 
-?>
+get_header(); ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
+<div class="container">
 
-		<?php if ('post' === get_post_type()) : ?>
-			<div class="entry-meta">
-				<?php realone\Core\Tags::posted_on(); ?>
-			</div><!-- .entry-meta -->
+	<div class="row">
 
-		<?php endif; ?>
-	</header><!-- .entry-header -->
+		<div class="col-sm-8">
 
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. */
-					__('Continue reading %s <span class="meta-nav">&rarr;</span>', 'realone'),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				the_title('<span class="screen-reader-text">"', '"</span>', false)
-			)
-		);
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main" role="main">
 
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__('Pages:', 'realone'),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
+					<?php
+					if (have_posts()) :
+					?>
 
-	<footer class="entry-footer">
-		<?php realone\core\tags::entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
+						<header>
+							<h1 class="page-title">
+								<?php
+								printf(
+									/* translators: %s: Search Term. */
+									esc_html__('Search Results for: %s', 'realone'),
+									'<span>' . get_search_query() . '</span>'
+								);
+								?>
+							</h1>
+						</header><!-- .page-header -->
+
+					<?php
+						/* Start the Loop */
+						while (have_posts()) :
+
+							the_post();
+
+							get_template_part('views/content', 'search');
+
+						endwhile;
+
+						the_posts_navigation();
+
+					else :
+
+						get_template_part('views/content', 'none');
+
+					endif;
+					?>
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+
+		</div><!-- .col- -->
+
+		<div class="col-sm-4">
+			<?php get_sidebar(); ?>
+		</div><!-- .col- -->
+
+	</div><!-- .row -->
+
+</div><!-- .container -->
+
+<?php
+get_footer();

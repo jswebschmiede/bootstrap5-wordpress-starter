@@ -7,7 +7,7 @@ function your_tpl_customizer_register($wp_customize)
     ]);
 
     $wp_customize->add_section('your_tpl_social_section', [
-        'title' => __('Social Settings', 'realone'),
+        'title' => __('Social Settings', 'your_tpl'),
         'priority' => 30
     ]);
 
@@ -15,7 +15,7 @@ function your_tpl_customizer_register($wp_customize)
         $wp_customize,
         'your_tpl_social_facebook_input',
         array(
-            'label'          => __('Facebook Link', 'realone'),
+            'label'          => __('Facebook Link', 'your_tpl'),
             'section'        => 'your_tpl_social_section',
             'settings'       => 'your_tpl_facebook_handle',
             'type'           => 'text',
