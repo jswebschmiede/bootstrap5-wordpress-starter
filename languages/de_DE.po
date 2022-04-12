@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Your Tpl\n"
+"POT-Creation-Date: 2022-04-12 13:55+0200\n"
+"PO-Revision-Date: 2022-04-12 13:57+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: 404.php:24
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oje! Die Seite wurde nicht gefunden."
+
+#. translators: 1: Comments count.
+#: comments.php:34
+#, php-format
+msgid "%d Comment."
+msgid_plural "%d Comments."
+msgstr[0] "%d Kommentar."
+msgstr[1] "%d Kommentare."
+
+#: comments.php:43 comments.php:68
+msgid "Comment navigation"
+msgstr "Kommentar Navigation"
+
+#: comments.php:46 comments.php:71
+msgid "Older Comments"
+msgstr "Ältere Kommentare"
+
+#: comments.php:47 comments.php:72
+msgid "Newer Comments"
+msgstr "Neuere Kommentare"
+
+#: comments.php:86
+msgid "Comments are closed."
+msgstr "Kommentare sind geschlossen."
+
+#: includes/admin/admin-menu.php:11 includes/admin/option-page.php:19
+msgid "your_tpl Settings"
+msgstr "your_tpl Einstellungen"
+
+#: includes/admin/admin-menu.php:12
+msgid "your_tpl"
+msgstr "your_tpl"
+
+#: includes/admin/option-page.php:11 includes/admin/process/save-options.php:11
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+"Du hast nicht die erforderlichen Rechte, um auf diese Seite zuzugreifen."
+
+#: includes/admin/option-page.php:22
+msgid "Options updated successfully!"
+msgstr "Optionen erfolgreich aktualisiert!"
+
+#: includes/admin/option-page.php:29
+msgid "Sticky Header"
+msgstr "Sticky Header"
+
+#: includes/admin/option-page.php:31 includes/admin/option-page.php:38
+#: includes/admin/option-page.php:45
+msgid "No"
+msgstr "Nein"
+
+#: includes/admin/option-page.php:32 includes/admin/option-page.php:39
+#: includes/admin/option-page.php:46
+msgid "Yes"
+msgstr "Ja"
+
+#: includes/admin/option-page.php:36
+msgid "Show Featured Properties on Front Page"
+msgstr "Ausgewählte Immobilien auf der Startseite anzeigen"
+
+#: includes/admin/option-page.php:43
+msgid "Show Regions on Front Page"
+msgstr "Regionen auf der Startseite anzeigen"
+
+#: includes/admin/option-page.php:52
+msgid "Save"
+msgstr "Speichern"
+
+#: includes/libs/class-wp-bootstrap-navwalker.php:374
+msgid "Add a menu"
+msgstr "Menü hinzufügen"
+
+#: includes/setup.php:14
+msgid "Primary Menu"
+msgstr "Hauptmenü"
+
+#: includes/theme-customizer.php:10
+msgid "Social Settings"
+msgstr "Sozial Media Einstellungen"
+
+#: includes/theme-customizer.php:18
+msgid "Facebook Link"
+msgstr "Facebook Link"
+
+#: includes/widgets.php:6
+msgid "Sidebar"
+msgstr "Seitenleiste"
+
+#: includes/widgets.php:8
+msgid "Default sidebar to add all your widgets."
+msgstr "Standard-Seitenleiste, um alle Ihre Widgets hinzuzufügen."
+
+#. translators: %s: Search Term.
+#: search.php:31 views/content-search.php:31
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Suchergebnisse für: %s"
+
+#: views/content-none.php:15
+msgid "Nothing Found"
+msgstr "Nichts gefunden"
+
+#. translators: 1: link.
+#: views/content-none.php:28
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Sind Sie bereit Ihren ersten Beitrag zu veröffentlichen?  <a href=\"%1$s"
+"\">Starten Sie hier</a>."
+
+#: views/content-none.php:42
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Es tut uns leid. Ihre Suche ergab keinen Treffer. Bitte versuchen Sie es mit "
+"einem anderen Begriff."
+
+#: views/content-none.php:51
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Es scheint, dass wir nicht finden können, was du suchst. Vielleicht kann die "
+"Suche helfen."
+
+#: views/content-page.php:24 views/content.php:51
+msgid "Pages:"
+msgstr "Seiten:"
+
+#. translators: %s: Name of current post.
+#: views/content.php:38
+#, php-format
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Weiterlesen %s <span class=\"meta-nav\">&rarr;</span>"
+
+#. Theme Name of the plugin/theme
+msgid "Your Tpl"
+msgstr "Dein Template"
+
+#. Theme URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://example.com"
+msgstr "https://example.com"
+
+#. Description of the plugin/theme
+msgid "Awesome description."
+msgstr "Tolle Beschreibung."
+
+#. Author of the plugin/theme
+msgid "Jörg"
+msgstr "Jörg"
