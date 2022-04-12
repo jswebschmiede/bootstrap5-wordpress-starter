@@ -28,15 +28,9 @@ var paths = {
   },
 };
 
-/**
- * Webpack compilation: http://webpack.js.org, https://github.com/shama/webpack-stream#usage-with-gulp-watch
- *
- * build_js()
- */
-
-function build_js() {
-  return gulp
-    .src(paths.scripts.src)
+// JS Task
+const jsTask = () => {
+  return src(paths.scripts.src)
     .pipe(
       webpackStream(
         {
@@ -45,46 +39,34 @@ function build_js() {
         compiler
       )
     )
-    .pipe(gulp.dest(paths.scripts.dest))
+    .pipe(dest(paths.scripts.dest))
     .pipe(
       server.stream() // Browser Reload
     );
-}
+};
 
-/**
- * SASS-CSS compilation: https://www.npmjs.com/package/gulp-sass
- *
- * build_css()
- */
-
-function build_css() {
-  const plugins = [autoprefixer(), cssnano()];
-
-  return gulp
-    .src(paths.styles.src)
+// Sass Task
+const scssTask = () => {
+  return src(paths.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass({ includePaths: ["./node_modules"] }).on("error", sass.logError))
-    .pipe(postcss(plugins))
-    .pipe(sourcemaps.write("./"))
-    .pipe(gulp.dest(paths.styles.dest))
+    .pipe(postcss([autoprefixer(), cssnano()]))
+    .pipe(sourcemaps.write("."))
+    .pipe(dest(paths.styles.dest))
     .pipe(
       server.stream() // Browser Reload
     );
-}
+};
 
-/**
- * Watch task: Webpack + SASS
- *
- * $ gulp watch
- */
-
-gulp.task("watch", function () {
-  // Modify "dev_url" constant and uncomment "server.init()" to use browser sync
+// Watch Task
+const watchTask = () => {
   server.init({
     proxy: dev_url,
   });
 
-  gulp.watch(["*.php", "./**/*.php"]).on("change", server.reload);
-  gulp.watch([paths.scripts.src], build_js);
-  gulp.watch([paths.styles.src], build_css);
-});
+  watch(["*.php", "./**/*.php"]).on("change", server.reload);
+  watch([paths.styles.src, paths.scripts.src], parallel(scssTask, jsTask));
+};
+
+// Default Task
+exports.default = series(parallel(scssTask, jsTask), watchTask);

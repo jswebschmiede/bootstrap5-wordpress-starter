@@ -10,7 +10,7 @@
     "url": "https://github.com/jswebschmiede/bootstrap5-wordpress-starter.git"
   },
   "scripts": {
-    "watch": "gulp watch"
+    "watch": "gulp"
   },
   "browserslist": [
     "last 2 versions"
