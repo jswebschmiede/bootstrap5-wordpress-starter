@@ -1,8 +1,17 @@
-const gulp = require("gulp");
-const fancylog = require("fancy-log");
-const browserSync = require("browser-sync");
+import gulp, { dest, lastRun, parallel, series, src, watch } from "gulp";
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+import autoprefixer from "autoprefixer";
+import sourcemaps from "gulp-sourcemaps";
+import postcss from "gulp-postcss";
+import cssnano from "cssnano";
+import compiler from "webpack";
+import webpackStream from "webpack-stream";
+import browserSync from "browser-sync";
+
+const dev_url = "yourlocal.dev";
+const sass = gulpSass(dartSass);
 const server = browserSync.create();
-const dev_url = "http://best-real-estate.local/";
 
 /**
  * Define all source paths
@@ -11,11 +20,11 @@ const dev_url = "http://best-real-estate.local/";
 var paths = {
   styles: {
     src: "./assets/src/scss/**/*.{scss,sass}",
-    dest: "./assets/css",
+    dest: "./assets/dist/css",
   },
   scripts: {
     src: "./assets/src/js/**/*.js",
-    dest: "./assets/js",
+    dest: "./assets/dist/js",
   },
 };
 
@@ -26,9 +35,6 @@ var paths = {
  */
 
 function build_js() {
-  const compiler = require("webpack");
-  const webpackStream = require("webpack-stream");
-
   return gulp
     .src(paths.scripts.src)
     .pipe(
@@ -52,16 +58,10 @@ function build_js() {
  */
 
 function build_css() {
-  const sass = require("gulp-sass")(require("sass"));
-  const postcss = require("gulp-postcss");
-  const sourcemaps = require("gulp-sourcemaps");
-  const autoprefixer = require("autoprefixer");
-  const cssnano = require("cssnano");
-
   const plugins = [autoprefixer(), cssnano()];
 
   return gulp
-    .src("assets/src/scss/**/*.{scss,sass}")
+    .src(paths.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass({ includePaths: ["./node_modules"] }).on("error", sass.logError))
     .pipe(postcss(plugins))

@@ -1,8 +1,14 @@
 /node_modules
+/assets/dist
 .env
 npm-debug.log
 yarn-error.log
 package-lock.json
+
+# images files
+*.jpg
+*.png
+*.svg
 
 # Compiled source
 *.com
