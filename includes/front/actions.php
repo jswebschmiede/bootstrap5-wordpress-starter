@@ -19,3 +19,19 @@ function your_tpl_fix_svg()
           }
           </style>';
 }
+
+/**
+ * your_tpl_add_custom_body_open_code
+ *
+ * @return void
+ */
+function your_tpl_add_custom_body_open_code()
+{
+    echo '
+     <div class="spinner-wrapper justify-content-center align-items-center">
+          <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Loading...</span>
+          </div>
+     </div>
+     ';
+}

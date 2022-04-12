@@ -11,4 +11,5 @@ function your_tpl_setup_theme()
     add_theme_support('responsive-embeds');
     add_theme_support('editor-styles');
     load_theme_textdomain('your_tpl', get_template_directory() . '/language');
+    register_nav_menu('main-menu', __('Primary Menu', 'your_tpl'));
 }

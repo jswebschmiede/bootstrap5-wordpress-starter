@@ -20,8 +20,10 @@ include(get_theme_file_path('/includes/libs/class-wp-bootstrap-navwalker.php'));
 // Hooks
 add_action('wp_enqueue_scripts', 'your_tpl_enqueue');
 add_action('after_setup_theme', 'your_tpl_setup_theme');
+add_action('after_setup_theme', 'your_tpl_load_theme_textdomain');
 add_action('widgets_init', 'your_tpl_widgets');
 add_action('customize_register', 'your_tpl_customizer_register');
+add_action('wp_body_open', 'your_tpl_add_custom_body_open_code');
 add_action('admin_head', 'your_tpl_fix_svg');
 
 // Filter
