@@ -1,6 +1,5 @@
 // Webpack Imports
 import * as bootstrap from "bootstrap";
-import "bs5-lightbox";
 
 (function () {
   "use strict";
@@ -15,12 +14,4 @@ import "bs5-lightbox";
       }
     });
   });
-
-  //Preloader
-  let preloaderFadeOutTime = 800;
-  function hidePreloader() {
-    var preloader = $(".spinner-wrapper");
-    preloader.delay(500).fadeOut(preloaderFadeOutTime);
-  }
-  hidePreloader();
 })();

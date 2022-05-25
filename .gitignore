@@ -1,5 +1,7 @@
 /node_modules
+node_modules
 /assets/dist
+dist
 .env
 npm-debug.log
 yarn-error.log
@@ -41,3 +43,4 @@ package-lock.json
 .Trashes
 ehthumbs.db
 Thumbs.db
+assets/node_modules

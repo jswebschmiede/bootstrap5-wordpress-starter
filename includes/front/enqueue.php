@@ -5,7 +5,6 @@ function your_tpl_enqueue()
     $uri = get_theme_file_uri();
     $version = REAL_DEV_MODE ? time() : false;
 
-    wp_register_style('your_tpl_google_fonts', 'https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap', array(), $version);
     wp_register_style('your_tpl_app', $uri . '/assets/css/main.css', array(), $version, 'all');
     wp_register_script('your_tpl_app', $uri . '/assets/js/main.bundle.js', array('jquery'), $version, true);
 

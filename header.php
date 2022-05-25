@@ -26,6 +26,7 @@
 
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
+
     <div id="page" class="site">
 
         <header id="header" class="site-header" role="banner">
